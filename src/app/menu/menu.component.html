@@ -1,0 +1,17 @@
+<div id="sidebar" class="nav-collapse ">
+	<!-- sidebar menu start-->
+	<ul class="sidebar-menu" id="nav-accordion">
+		<p class="centered"><a href="profile.html"><img src="assets/images/teacher_837826.png" class="img-circle" width="80"></a></p>
+		<h5 class="centered">Teacher Name</h5>
+		<li *ngFor="let menu of menuUtama" class="sub-menu">
+			<a href="javascript:;">
+				<i class="{{menu.icon}}"></i>
+				<span>{{menu.nama_menu | uppercase}}</span>
+			</a>
+			<ul class="sub" *ngIf="menu.sub_menu" >
+				<li *ngFor="let submenu of menu.sub_menu" [class.active]="submenu.link === selectedMenu" (click)="onSelect(submenu.link)"><a href="#">{{submenu.nama_sub}}</a></li>            
+			</ul>
+		</li>
+	</ul>
+	<!-- sidebar menu end-->
+</div>
