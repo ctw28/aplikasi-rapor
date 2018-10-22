@@ -11,11 +11,13 @@ export class MenuComponent implements OnInit {
   	{
   		id: 1 , 
   		nama_menu : 'Dashboard', 
+  		link : 'dashboard', 
   		icon : 'fa fa-desktop'
 	},
   	{
 		id_menu: "2",
 		nama_menu: "Penilaian",
+  		link : '', 
 		icon : 'fa fa-bar-chart-o',
 		sub_menu: 
 		[
@@ -28,6 +30,7 @@ export class MenuComponent implements OnInit {
   	{
 		id_menu: "3",
 		nama_menu: "Data",
+  		link : '', 
 		icon : 'fa fa-tasks',
 		sub_menu: 
 		[
@@ -52,4 +55,3 @@ export class MenuComponent implements OnInit {
 
 }
 
-http://localhost/web_balai/data/rest_menu
