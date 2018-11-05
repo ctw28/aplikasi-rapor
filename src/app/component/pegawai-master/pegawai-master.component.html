@@ -1,0 +1,112 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card-box">
+      <h4 class="m-t-0 header-title"><b>Form Tambah Data Pegawai Sekolah</b> <small>Kepala Sekolah, Guru dan Lainnya</small></h4>
+      <!--<p class="text-muted m-b-30 font-13">Mohon input data berita setelah datanya telah di validasi.</p>-->
+      <div class="row">
+        <div class="col-md-12">
+
+          <form [formGroup]="form">
+
+            <div class="form-group">
+              <label class="col-md-2 control-label">Nama Pegawai*</label>
+              <div class="col-sm-10">
+                <input type="hidden" formControlName="uuid"/>
+                <input type="text" formControlName="namaPegawai"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-2 control-label">NIP Pegawai</label>
+              <div class="col-sm-10">
+                <input type="text" formControlName="nipPegawai"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-2 control-label">TTL</label>
+              <div class="col-sm-10">
+                <input type="text" />
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label class="col-md-2 control-label">Alamat</label>
+              <div class="col-sm-10">
+                <textarea formControlName="alamatPegawai"></textarea>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-2 control-label">No HP Pegawai</label>
+              <div class="col-sm-10">
+                <input type="text" formControlName="hpPegawai"/>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-2 control-label">Email Pegawai</label>
+              <div class="col-sm-10">
+                <input type="email" formControlName="emailPegawai"/>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label class="col-md-2 control-label">Jenis Kelamin</label>
+              <div class="col-sm-10">
+                <label ><input type="radio" name="optradio" checked>Laki-Laki </label>
+                <label ><input type="radio" name="optradio"> Perempuan</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-2 control-label">Agama</label>
+              <div class="col-sm-10">
+                <select>
+                  <option>Islam</option>
+                  <option>Kristen</option>
+                  <option>Hindu</option>
+                  <option>Budha</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-2 control-label">Jabatan</label>
+              <div class="col-sm-10" formGroupName="uuidJabatan">
+                <select formControlName="uuid">
+                  <option *ngFor="let d of dataJabatan;"
+                          [value]="d.uuid" >
+                    {{d.namaJabatan}}
+                  </option>
+                </select>
+              </div>
+            </div>
+
+            <!--<div class="form-group">-->
+            <!--<label class="col-md-2 control-label">Foto Pegawai</label>-->
+            <!--<div class="col-sm-10">-->
+            <!--<input type="file" formControlName="fileFotoPegawai"/>-->
+            <!--</div>-->
+            <!--</div>-->
+
+            <label class="col-md-1 control-label"></label>
+            <div class="col-sm-6">
+              <div class="form-group m-b-0">
+                <button [disabled]="!form.valid" (click)="save(form.value)"
+                        class="btn btn-default waves-effect waves-light btn-md">Submit
+                </button>
+              </div>
+            </div>
+          </form>
+
+        </div> <!-- end col-md-12 -->
+      </div> <!-- end row -->
+      <p>Keterangan : </p>
+      <small class="req-sign">*</small>
+      Harus di Isi
+    </div><!-- end card-box -->
+  </div><!-- end col-sm-12 -->
+</div><!-- end row -->
